@@ -1,0 +1,1 @@
+// Handles localStorage logic for SyncWave
