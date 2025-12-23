@@ -1,1 +1,30 @@
-<!-- Base layout -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SyncWave</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🎧 SyncWave</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/mood">Mood</a>
+      <a href="/history">History</a>
+      <button id="change-mood-btn">Change Mood</button>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>© SyncWave</p>
+  </footer>
+
+  <script src="/static/js/ui.js"></script>
+</body>
+</html>
