@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <section class="home">
-    <h1>🎧 Welcome to SyncWave</h1>
-    <p>Your music, your mood.</p>
+<section class="home">
+  <h1>🎧 SyncWave</h1>
 
-    <div class="player-placeholder">
-      <p>Player will appear here</p>
-    </div>
-  </section>
+  <iframe
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n?utm_source=generator"
+    width="100%"
+    height="352"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+
+</section>
 {% endblock %}
