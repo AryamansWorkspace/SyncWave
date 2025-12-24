@@ -1,1 +1,14 @@
-<!-- First-time mood selection -->
+{% extends "base.html" %}
+
+{% block content %}
+<section class="home">
+  <h1>Select Your Mood</h1>
+
+  <div class="mood-grid">
+    <button class="btn-primary mood-btn" data-mood="Chill">Chill</button>
+    <button class="btn-primary mood-btn" data-mood="Romantic">Romantic</button>
+    <button class="btn-primary mood-btn" data-mood="Energetic">Energetic</button>
+    <button class="btn-primary mood-btn" data-mood="Sad">Sad</button>
+  </div>
+</section>
+{% endblock %}

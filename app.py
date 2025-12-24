@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, redirect
 from services import load_songs, load_moods
 
 app = Flask(__name__)
@@ -26,6 +26,10 @@ def get_songs():
 @app.route("/api/moods")
 def get_moods():
     return jsonify(load_moods())
+
+@app.route("/check")
+def check():
+    return redirect("/first-time")
 
 if __name__ == "__main__":
     app.run(debug=True)
