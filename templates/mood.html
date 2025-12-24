@@ -1,1 +1,10 @@
-<!-- Mood recommendations page -->
+{% extends "base.html" %}
+
+{% block content %}
+<section class="home">
+  <h1>Current Mood</h1>
+  <p id="current-mood">—</p>
+
+  <button id="analyze-btn" class="btn-primary">Analyze Mood</button>
+</section>
+{% endblock %}
