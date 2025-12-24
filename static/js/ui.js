@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const moodEl = document.getElementById("current-mood");
   const analyzeBtn = document.getElementById("analyze-btn");
   const moodBtns = document.querySelectorAll(".mood-btn");
+  const historyList = document.getElementById("history-list");
 
   if (moodEl) {
     const mood = localStorage.getItem("currentMood");
@@ -10,8 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (analyzeBtn) {
     analyzeBtn.addEventListener("click", () => {
-      localStorage.setItem("lastAnalyzedAt", Date.now().toString());
-      window.location.href = "/";
+      const mood = localStorage.getItem("currentMood");
+      if (!mood) return;
+      const history = JSON.parse(localStorage.getItem("moodHistory") || "[]");
+      history.unshift({ mood, time: Date.now() });
+      localStorage.setItem("moodHistory", JSON.stringify(history.slice(0, 14)));
+      window.location.href = "/history";
     });
   }
 
@@ -23,4 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "/";
     });
   });
+
+  if (historyList) {
+    const history = JSON.parse(localStorage.getItem("moodHistory") || "[]");
+    history.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.mood} • ${new Date(item.time).toLocaleString()}`;
+      historyList.appendChild(li);
+    });
+  }
 });
