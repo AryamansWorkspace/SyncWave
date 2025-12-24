@@ -1,8 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const changeMoodBtn = document.getElementById("change-mood-btn");
   const moodEl = document.getElementById("current-mood");
   const analyzeBtn = document.getElementById("analyze-btn");
   const moodBtns = document.querySelectorAll(".mood-btn");
   const historyList = document.getElementById("history-list");
+
+  if (changeMoodBtn) {
+    changeMoodBtn.addEventListener("click", () => {
+      window.location.href = "/first-time";
+    });
+  }
 
   if (moodEl) {
     const mood = localStorage.getItem("currentMood");
