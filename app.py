@@ -15,9 +15,17 @@ def first_time():
 def mood():
     return render_template("mood.html")
 
+@app.route("/recent")
+def recent():
+    return render_template("recent.html")
+
 @app.route("/history")
 def history():
     return render_template("history.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 @app.route("/api/songs")
 def get_songs():
